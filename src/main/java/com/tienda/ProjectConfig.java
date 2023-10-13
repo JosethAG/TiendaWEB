@@ -40,4 +40,13 @@ public class ProjectConfig implements WebMvcConfigurer{
     public void addInterceptors(InterceptorRegistry registro){
         registro.addInterceptor(localChangeinterceptor());
     }
+    
+    @Bean("messageSource")
+    public MessageSource messageSource(){
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasenames("messages");
+        messageSource.setDefaultEncoding("UTF");
+        return messageSource;
+    }
+    
 }
