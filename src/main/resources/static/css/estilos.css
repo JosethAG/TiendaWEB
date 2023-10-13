@@ -1,0 +1,101 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 21, 2023, 9:22:50 PM
+    Author     : perezer
+*/
+/* Comentario */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 80px 20px 0;
+    background-color: #3ab970;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #c4dede;
+    
+}
+
+.aside {
+    position: fixed;
+    top: 20%;
+    left: 0;
+    width: 20%;
+    height: 75%;
+    background-color: #c5efec;
+}
+
+.noticia{
+    background-color: azure;
+}
+
+.section{
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    width: 80%;
+    height: 75%;
+    background-color: #c5efec;
+    overflow-y: scroll;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    background-color: #042c2b;
+    text-align: center;
+    color: white;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 90px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 92px;
+    margin: 0 auto;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-link {
+    font-size: 20px;
+    margin: 0 10px;
+    line-height: 90px;
+    width: max-content;
+}
+
+.nav-menu-item{
+    color: white;
+    text-decoration: none;
+}
