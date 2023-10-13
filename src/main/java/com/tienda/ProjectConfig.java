@@ -12,41 +12,41 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
-public class ProjectConfig implements WebMvcConfigurer{
+public class ProjectConfig implements WebMvcConfigurer {
     
     // Los siguientes metodos son para incorporar el tema de internacionalizacion en el proyecto
     
     //LocalResolver se utiliza para crear una sesion de cambio de idioma
     
     @Bean
-    public LocaleResolver localResolver(){
+    public LocaleResolver localeResolver() {
         var slr = new SessionLocaleResolver();
         slr.setDefaultLocale(Locale.getDefault());
         slr.setLocaleAttributeName("session.current.locale");
         slr.setTimeZoneAttributeName("session.current.timezone");
         return slr;
     }
-    
-    //localChangeInterceptor se usa para crear un interseptor de cambio de idioma
-    
+
+    /* localeChangeInterceptor se utiliza para crear un interceptor de cambio de idioma*/
     @Bean
-    public LocaleChangeInterceptor localChangeinterceptor(){
+    public LocaleChangeInterceptor localeChangeInterceptor() {
         var lci = new LocaleChangeInterceptor();
         lci.setParamName("lang");
         return lci;
-    } 
-    
+    }
+
     @Override
-    public void addInterceptors(InterceptorRegistry registro){
-        registro.addInterceptor(localChangeinterceptor());
+    public void addInterceptors(InterceptorRegistry registro) {
+        registro.addInterceptor(localeChangeInterceptor());
     }
     
+    //Poder accesar a los messages.properties 
     @Bean("messageSource")
-    public MessageSource messageSource(){
-        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        messageSource.setBasenames("messages");
-        messageSource.setDefaultEncoding("UTF");
-        return messageSource;
+    public MessageSource messageSource(){ 
+      ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource(); 
+      messageSource.setBasenames("messages"); 
+      messageSource.setDefaultEncoding("UTF-8"); 
+      return messageSource;
     }
     
 }
