@@ -12,12 +12,12 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="categoria")
-public class Categoria implements Serializable{ //Serializacion funciona para almacenar datos en el disco
-    private static final long serialVersionUID = 1L; //para poder hacer el ciclo del incremental del ID
+public class Categoria implements Serializable{//Serealizacion funciona para almacenar ciertos datos en la maquina
     
-    @Id //Tabla categor[ia tiene un identificador ID
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //los valores generados que utilicen el tipo de estrategia identico a la DB
-    @Column(name="id_categoria")//
+    private static final long serialVersionUID = 1L;//para poder hacer el ciclo de la sumatoria del idCategoria
+    @Id //tabla categoria tiene una llave o identificador que va a ser el ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//Los valores generados que tipo de estrategia utilizan, identico = sea igual en la BD y en la clase
+    @Column(name="id_categoria")//decir cual es el nombre de la columna de la base de datos  
     private long idCategoria;
     private String descripcion;
     private String rutaImagen;
@@ -30,7 +30,4 @@ public class Categoria implements Serializable{ //Serializacion funciona para al
         this.descripcion = descripcion;
         this.activo = activo;
     }
-    
-    
-    
 }
