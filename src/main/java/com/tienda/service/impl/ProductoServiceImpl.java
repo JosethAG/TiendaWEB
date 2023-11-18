@@ -41,4 +41,26 @@ public class ProductoServiceImpl implements ProductoService {
     public void delete(Producto producto) {
         productoDao.delete(producto);
     }
+    
+    //Consulta JPA para traer informacion sobre el precio inferior y el precio superior
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup){
+        return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+    }
+    
+    //Consulta JPQL para traer informacion sobre el precio inferior y el precio superior
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> metodoJPQL(double precioInf, double precioSup){
+        return productoDao.metodoJPQL(precioInf, precioSup);
+    }
+    
+    //Consulta Nativo para traer informacion sobre el precio inferior y el precio superior
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> metodoNativo(double precioInf, double precioSup){
+        return productoDao.metodoNativo(precioInf, precioSup);
+    }
+    
 }
