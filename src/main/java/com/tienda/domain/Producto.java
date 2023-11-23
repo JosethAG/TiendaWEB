@@ -26,8 +26,9 @@ public class Producto implements Serializable{//Serealizacion funciona para alma
     private String rutaImagen;
     private boolean activo;
     private double precio;
-    //private long idCategoria;
     private int existencias;
+    //private long idCategoria;
+    
     
     @ManyToOne
     @JoinColumn(name="id_categoria")
